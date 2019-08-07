@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradation"
+    tools:context=".FavoriteActivity">
+
+    <TextView
+        android:id="@+id/favorite_explain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/comforta"
+        android:text="What are you interested in?"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circle_favorite"
+        app:layout_constraintVertical_bias="0.04000002" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_favorite"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#fff"
+
+        android:src="@drawable/camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favorite_explain"
+        app:layout_constraintVertical_bias="0.07999998"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/favorite_whole_body"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Whole body"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/favorite_upper_body"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:height="30dp"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Upper body"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/favorite_chest"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Chest"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/favorite_arm"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Arm"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/favorite_hips"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Hips"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/favorite_lower_body"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Lower body"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/favorite_leg"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Leg"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/favorite_stomach"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Stomach"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/favorite_back"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/favorite_shoulder"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Shoulder"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/favorite_pelvis"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_action"
+                android:fontFamily="@font/comforta"
+                android:padding="0dp"
+                android:text="Pelvis"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/favorite_done"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/comforta"
+        android:text="Done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/done_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.87" />
+</android.support.constraint.ConstraintLayout>
