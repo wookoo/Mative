@@ -6,15 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".CalanderActivity">
 
-    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
+        android:id="@+id/fail"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/comforta"
+            android:text="The reason why I failed"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f0e6fe"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="0"
+                android:background="#B880F7"
+                android:fontFamily="@font/comforta"
+                android:text="1"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/comforta"
+                android:gravity="center"
+                android:text="I didn't have enough time"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:background="#f0e6fe"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="#B880F7"
+                android:gravity="center"
+                android:fontFamily="@font/comforta"
+                android:text="3"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/comforta"
+                android:gravity="center"
+                android:text="Overwork, too tired."
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/fail"
+        app:layout_constraintTop_toTopOf="parent"
         app:mcv_selectionColor="#a9dbf0cb"
-        app:mcv_showOtherDates="defaults"
-        tools:layout_editor_absoluteX="-26dp"
-        tools:layout_editor_absoluteY="146dp" />
+        app:mcv_showOtherDates="defaults" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
