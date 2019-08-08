@@ -30,7 +30,9 @@ public class ReadyActivity extends AppCompatActivity {
     int page = 1;
     private BluetoothSPP bt;
     // final String Address = "50:77:05:43:72:FA";
-    String Address = "00:18:E4:35:65:8D";
+    //String Address = "00:18:E4:35:65:8D";
+    //final String Address = "98:D3:61:F9:49:8E";
+    String Address= "98:D3:11:F8:41:9A";
     boolean stoped = true;
     int mainTime = 30;
 
@@ -98,7 +100,7 @@ public class ReadyActivity extends AppCompatActivity {
                 //Log.d("블루투스 수신",message);
                 if(message.equals("y") && stoped)  {
                     stoped = false;
-
+                    bt.send("000000\n", false);
 
                     Intent my_intent = new Intent(ReadyActivity.this,Alarm_Reciver.class);
                     my_intent.putExtra("state","alarm off");

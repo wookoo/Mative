@@ -208,7 +208,7 @@ public class RecordActivity extends AppCompatActivity {
     public boolean onKeyDown(int KeyCode, KeyEvent event){
 
         if(KeyCode == KeyEvent.KEYCODE_VOLUME_UP){
-            Toast.makeText(RecordActivity.this,"10초후 알람이 울립니다." ,Toast.LENGTH_SHORT).show();
+            Toast.makeText(RecordActivity.this,"5초후 알람이 울립니다." ,Toast.LENGTH_SHORT).show();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -256,20 +256,7 @@ public class RecordActivity extends AppCompatActivity {
 
 
                 }
-            },10000);
-
-
-
-
-
-
-
-
-
-
-
-
-
+            },5000);
 
             return true;
         }

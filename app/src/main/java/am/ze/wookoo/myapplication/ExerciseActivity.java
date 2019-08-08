@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -30,9 +31,10 @@ public class ExerciseActivity extends AppCompatActivity {
 
     int page = 1;
     private BluetoothSPP bt;
-   // final String Address = "50:77:05:43:72:FA";
-    String Address = "00:18:E4:35:65:8D";
-    int mainTime = 30;
+    //final String Address = "98:D3:61:F9:49:8E";
+    //String Address = "00:18:E4:35:65:8D";
+    String Address= "98:D3:11:F8:41:9A";
+    int mainTime = 10;
     TextView mTimer;
     Timer Timer;
     ViewPager vpPager;
@@ -243,7 +245,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
                 if(mainTime <= 0){
 
-                    mainTime = 30;
+                    mainTime = 10;
 
                     mTimer.setText("30");
                     if(page <=2){
@@ -271,10 +273,12 @@ public class ExerciseActivity extends AppCompatActivity {
 
                     }
                     else{
-                        bt.send("000000", false);
+                        bt.send("000000\n", false);
+
                         Timer.cancel();
                         startActivity(new Intent(ExerciseActivity.this, RecordActivity.class));
                         finish();
+
                     }
                 }
             }
