@@ -3,16 +3,19 @@ package am.ze.wookoo.myapplication;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Handler;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -22,6 +25,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class AwardActivity extends AppCompatActivity {
+    ViewPager vpPager;
+    FragmentPagerAdapter adapterViewPager;
+    Button AchieveBtn;
+    Button AllBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,50 @@ public class AwardActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        vpPager = findViewById(R.id.vppager);
+        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
+        vpPager.setAdapter(adapterViewPager);
+        AchieveBtn = findViewById(R.id.achieved_btn);
+        AllBtn = findViewById(R.id.all_btn);
+
+
+
+        AchieveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vpPager.setCurrentItem(0);
+                adapterViewPager.notifyDataSetChanged();
+                AchieveBtn.setSelected(true);
+                AchieveBtn.setTextColor(Color.parseColor("#B880F7"));
+
+                AllBtn.setSelected(false);
+                AllBtn.setTextColor(Color.WHITE);
+            }
+        });
+
+        AllBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vpPager.setCurrentItem(1);
+                adapterViewPager.notifyDataSetChanged();
+                AchieveBtn.setSelected(false);
+                AchieveBtn.setTextColor(Color.WHITE);
+                AllBtn.setSelected(true);
+                AllBtn.setTextColor(Color.parseColor("#B880F7"));
+            }
+        });
+
+        AchieveBtn.callOnClick();
+
+        vpPager.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        }); //스크롤 잠금
+
+
 
         Button mCalander = findViewById(R.id.award_calander);
         mCalander.setOnClickListener(new View.OnClickListener() {
@@ -106,7 +158,7 @@ public class AwardActivity extends AppCompatActivity {
         return super.onKeyDown(KeyCode, event);
     }
     private static class MyPagerAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 3;
+        private  static int NUM_ITEMS = 2;
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -121,21 +173,20 @@ public class AwardActivity extends AppCompatActivity {
         // Returns the fragment to display for that page
         @Override
         public Fragment getItem(int position) {
+
+            Log.d("아이템",""+position);
             switch (position) {
                 case 0:
-                    return FirstFragment.newInstance(0, "Page # 1");
+                    return FirstAward.newInstance(0, "Page # 1");
+
                 case 1:
-                    return SecondFragment.newInstance(1, "Page # 2");
+
+                    return SecondAward.newInstance(1, "Page # 2");
                 default:
                     return null;
             }
         }
 
-        // Returns the page title for the top indicator
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return "Page " + position;
-        }
 
     }
 
