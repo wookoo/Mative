@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(new Intent(MainActivity.this, RecordBeforeActivity.class));
-              //  startActivity(new Intent(MainActivity.this,CalanderActivity.class));
                 finish();
             }
         },500);

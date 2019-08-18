@@ -37,29 +37,10 @@ public class AlarmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alarm);
         alarm_timepicker = findViewById(R.id.picker_date);
         alarm_timepicker.setDescendantFocusability(TimePicker.FOCUS_BLOCK_DESCENDANTS);
-
-
         this.context = this;
         alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
-
         final Calendar calendar = Calendar.getInstance();
         my_intent = new Intent(this.context,Alarm_Reciver.class);
-
-/*
-        Button b1 = findViewById(R.id.alarm_fri);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    Toast.makeText(AlarmActivity.this,mPicker.getHour() + " 시 " + mPicker.getMinute(), Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(AlarmActivity.this,mPicker.getCurrentHour() + " 시 " + mPicker.getCurrentMinute(), Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        });
-*/
-
         ArrayList<Button> week_btns = new ArrayList<Button>();
         week_btns.add((Button)findViewById(R.id.alarm_sun));
         week_btns.add((Button)findViewById(R.id.alarm_mon));
@@ -117,34 +98,18 @@ public class AlarmActivity extends AppCompatActivity {
 
                 String data;
                 if(alarm_timepicker.getCurrentHour() > 12 ){
-                    //data += (alarm_timepicker.getCurrentHour() - 12) + ":" + alarm_timepicker.getCurrentMinute() + "PM";
-
                     data = String.format(" Alarm %d : %02d PM", (alarm_timepicker.getCurrentHour() - 12),alarm_timepicker.getCurrentMinute());
-
-
                 }else if(alarm_timepicker.getCurrentHour() == 12){
-                    //data += alarm_timepicker.getCurrentHour() + ":" + alarm_timepicker.getCurrentMinute() + "PM";
-
                     data = String.format(" Alarm %d : %02d PM", (alarm_timepicker.getCurrentHour()),alarm_timepicker.getCurrentMinute());
                 }else if(alarm_timepicker.getCurrentHour() == 0){
                     data = String.format(" Alarm %d : %02d AM", (12),alarm_timepicker.getCurrentMinute());
-                    //data += 12 + ":" + alarm_timepicker.getCurrentMinute() + "AM";
                 }
                 else {
-
                     data = String.format(" Alarm %d : %02d AM", (alarm_timepicker.getCurrentHour()),alarm_timepicker.getCurrentMinute());
-                  //  data += alarm_timepicker.getCurrentHour() + ":" + alarm_timepicker.getCurrentMinute() + "AM";
                 }
-
-                mIntent.putExtra("time",data);
-                SQLiteDatabase mDB;
-                DBHelper dbHelper = new DBHelper(AlarmActivity.this);
-                mDB = dbHelper.getWritableDatabase();
-                mDB.execSQL("UPDATE user SET ALARM = '"+ data+"'");
-
                 startActivity(mIntent);
                 finish();
-                //startActivity(new Intent(AlarmActivity.this,RecordActivity.class));
+
             }
 
 
@@ -152,10 +117,6 @@ public class AlarmActivity extends AppCompatActivity {
 
 
         });
-
-
-
-
 
     }
 }

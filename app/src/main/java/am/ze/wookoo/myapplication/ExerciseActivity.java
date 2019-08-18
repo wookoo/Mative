@@ -247,7 +247,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
                     mainTime = 10;
 
-                    mTimer.setText("30");
+                    mTimer.setText("10");
                     if(page <=2){
 
                         runOnUiThread(new Runnable() {
@@ -276,7 +276,7 @@ public class ExerciseActivity extends AppCompatActivity {
                         bt.send("000000\n", false);
 
                         Timer.cancel();
-                        startActivity(new Intent(ExerciseActivity.this, RecordActivity.class));
+                        startActivity(new Intent(ExerciseActivity.this, FinishActivity.class));
                         finish();
 
                     }
@@ -285,7 +285,7 @@ public class ExerciseActivity extends AppCompatActivity {
         };
 
 
-        Timer.schedule(task,0,300);
+        Timer.schedule(task,0,1000);
 
     }
 

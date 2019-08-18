@@ -65,10 +65,6 @@ public class AwardBeforeActivity extends AppCompatActivity {
                     calendar.set(Calendar.HOUR_OF_DAY, hour);
                     calendar.set(Calendar.MINUTE, min);
                     calendar.set(Calendar.SECOND,0);
-
-
-
-                    // reveiver에 string 값 넘겨주기
                     my_intent.putExtra("state","alarm on");
 
                     PendingIntent pendingIntent;
@@ -76,7 +72,6 @@ public class AwardBeforeActivity extends AppCompatActivity {
                     pendingIntent = PendingIntent.getBroadcast(AwardBeforeActivity.this, 0, my_intent,
                             PendingIntent.FLAG_UPDATE_CURRENT);
 
-                    // 알람셋팅
                     AlarmManager alarm_manager;
                     alarm_manager = (AlarmManager)getSystemService(ALARM_SERVICE);
                     alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),

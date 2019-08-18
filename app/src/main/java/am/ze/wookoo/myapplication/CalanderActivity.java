@@ -88,8 +88,6 @@ public class CalanderActivity extends AppCompatActivity {
             }
         }
 
-
-        //파란색 4F8BF6 보라색 B880F7
         mView.addDecorator(new FailEventDecorator(Color.parseColor("#B880F7"),failList,CalanderActivity.this));
 
         mView.addDecorator(new EventDecorator(Color.parseColor("#4F8BF6"),successLIst,CalanderActivity.this));
@@ -106,7 +104,6 @@ public class CalanderActivity extends AppCompatActivity {
                 }else{
                     mFail.setVisibility(View.VISIBLE);
                 }
-            //    Toast.makeText(CalanderActivity.this,"" + date.getMonth() + "/" + CalendarDay.today().getMonth(),Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -147,8 +144,6 @@ public class CalanderActivity extends AppCompatActivity {
                     calendar.set(Calendar.SECOND,0);
 
 
-
-                    // reveiver에 string 값 넘겨주기
                     my_intent.putExtra("state","alarm on");
 
                     PendingIntent pendingIntent;
@@ -156,7 +151,6 @@ public class CalanderActivity extends AppCompatActivity {
                     pendingIntent = PendingIntent.getBroadcast(CalanderActivity.this, 0, my_intent,
                             PendingIntent.FLAG_UPDATE_CURRENT);
 
-                    // 알람셋팅
                     AlarmManager alarm_manager;
                     alarm_manager = (AlarmManager)getSystemService(ALARM_SERVICE);
                     alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),

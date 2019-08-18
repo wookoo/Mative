@@ -131,9 +131,6 @@ public class AwardActivity extends AppCompatActivity {
                     calendar.set(Calendar.MINUTE, min);
                     calendar.set(Calendar.SECOND,0);
 
-
-
-                    // reveiver에 string 값 넘겨주기
                     my_intent.putExtra("state","alarm on");
 
                     PendingIntent pendingIntent;
@@ -141,7 +138,6 @@ public class AwardActivity extends AppCompatActivity {
                     pendingIntent = PendingIntent.getBroadcast(AwardActivity.this, 0, my_intent,
                             PendingIntent.FLAG_UPDATE_CURRENT);
 
-                    // 알람셋팅
                     AlarmManager alarm_manager;
                     alarm_manager = (AlarmManager)getSystemService(ALARM_SERVICE);
                     alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
@@ -164,13 +160,11 @@ public class AwardActivity extends AppCompatActivity {
             super(fragmentManager);
         }
 
-        // Returns total number of pages
         @Override
         public int getCount() {
             return NUM_ITEMS;
         }
 
-        // Returns the fragment to display for that page
         @Override
         public Fragment getItem(int position) {
 
@@ -186,8 +180,6 @@ public class AwardActivity extends AppCompatActivity {
                     return null;
             }
         }
-
-
     }
 
 }
